@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI_Detyra1", "AI_Detyra1\AI_Detyra1.csproj", "{97323896-BC91-493A-B001-C46A77A3DD19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku - Graph Coloring", "Sudoku - Graph Coloring\Sudoku - Graph Coloring.csproj", "{851EDF32-9087-46E2-8DB6-D17B2E302B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Social Golfers", "Social Golfers\Social Golfers.csproj", "{8416A86B-6333-48AC-AA6D-2843B48FBEDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97323896-BC91-493A-B001-C46A77A3DD19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97323896-BC91-493A-B001-C46A77A3DD19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97323896-BC91-493A-B001-C46A77A3DD19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97323896-BC91-493A-B001-C46A77A3DD19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851EDF32-9087-46E2-8DB6-D17B2E302B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851EDF32-9087-46E2-8DB6-D17B2E302B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851EDF32-9087-46E2-8DB6-D17B2E302B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851EDF32-9087-46E2-8DB6-D17B2E302B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8416A86B-6333-48AC-AA6D-2843B48FBEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8416A86B-6333-48AC-AA6D-2843B48FBEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8416A86B-6333-48AC-AA6D-2843B48FBEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8416A86B-6333-48AC-AA6D-2843B48FBEDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4CCBA84-B1C9-484C-8739-83C2366CD7FE}
+	EndGlobalSection
+EndGlobal
