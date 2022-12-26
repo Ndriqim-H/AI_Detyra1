@@ -58,7 +58,7 @@ namespace Sudoku_Graph_Coloring_Final_Solution
             Sudoku sud = new(nodes);
             var y = sud.GetChildren(nodes);
 
-            updateNodes(nodes);
+            Sudoku.UpdateNodes(nodes);
             var x = nodes[0];
             x.GetChildren();
 
@@ -76,7 +76,7 @@ namespace Sudoku_Graph_Coloring_Final_Solution
                 if (currentNode.IsGoal())
                 {
                     Console.WriteLine("Goal Found");
-                    showSudoku(currentNode.State);
+                    Sudoku.ShowSudoku(currentNode.State);
                     break;
                 }
                 else
@@ -96,7 +96,30 @@ namespace Sudoku_Graph_Coloring_Final_Solution
             Console.WriteLine("Solved");
             //showSudoku(nodes);
         }
-        public static void updateNodes(List<Node> nodes)
+        
+
+        
+
+
+        public static bool CheckIfSolved(List<Node> nodes) => nodes.All(t => t.Color != 0);
+
+    }
+
+    class Sudoku
+    {
+        public List<Node> State { get; set; } = new();
+        public Sudoku(List<Node> nodes)
+        {
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                State.Add(new Node(nodes[i].Color, nodes[i].Initial, nodes[i].RowId, nodes[i].ColId));
+            }
+
+            UpdateNodes(State);
+        }
+
+
+        public static void UpdateNodes(List<Node> nodes)
         {
             for (int i = 0; i < nodes.Count; i++)
             {
@@ -112,7 +135,7 @@ namespace Sudoku_Graph_Coloring_Final_Solution
             }
         }
 
-        public static void showSudoku(List<Node> variables)
+        public static void ShowSudoku(List<Node> variables)
         {
             //Create a 9x9 0 matrix.
             int[,] x = new[,]
@@ -142,24 +165,6 @@ namespace Sudoku_Graph_Coloring_Final_Solution
                 }
                 Console.WriteLine();
             }
-        }
-
-
-        public static bool CheckIfSolved(List<Node> nodes) => nodes.All(t => t.Color != 0);
-
-    }
-
-    class Sudoku
-    {
-        public List<Node> State { get; set; } = new();
-        public Sudoku(List<Node> nodes)
-        {
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                State.Add(new Node(nodes[i].Color, nodes[i].Initial, nodes[i].RowId, nodes[i].ColId));
-            }
-
-            Program.updateNodes(State);
         }
 
         public bool IsGoal() => State.All(t => t.Color != 0);
