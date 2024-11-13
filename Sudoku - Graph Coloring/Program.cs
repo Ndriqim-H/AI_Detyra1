@@ -43,8 +43,6 @@ namespace Sudoku_Graph_Coloring_Final_Solution
 
             int[,] sudoku = initialState;
 
-
-
             List<Node> nodes = new();
             for (int i = 0; i < sudoku.GetLength(0); i++)
             {
@@ -65,7 +63,13 @@ namespace Sudoku_Graph_Coloring_Final_Solution
             //BFS = Queue; DFS = Stack
             Queue<Sudoku> OpenList = new();
             List<Sudoku> ClosedList = new();
-            OpenList.Enqueue(new Sudoku(nodes));
+            var firstNode = new Sudoku(nodes);
+            OpenList.Enqueue(firstNode);
+
+            Console.WriteLine("Start: ");
+            Sudoku.ShowSudoku(firstNode.State);
+            Console.WriteLine("Solving...");
+            Console.WriteLine("__________________________________");
 
             while (OpenList.Count > 0)
             {
@@ -75,7 +79,7 @@ namespace Sudoku_Graph_Coloring_Final_Solution
                 ClosedList.Add(currentNode);
                 if (currentNode.IsGoal())
                 {
-                    Console.WriteLine("Goal Found");
+                    Console.WriteLine("Goal Found:");
                     Sudoku.ShowSudoku(currentNode.State);
                     break;
                 }
@@ -96,11 +100,6 @@ namespace Sudoku_Graph_Coloring_Final_Solution
             Console.WriteLine("Solved");
             //showSudoku(nodes);
         }
-        
-
-        
-
-
         public static bool CheckIfSolved(List<Node> nodes) => nodes.All(t => t.Color != 0);
 
     }
@@ -161,7 +160,10 @@ namespace Sudoku_Graph_Coloring_Final_Solution
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    Console.Write($"{x[i, j]} ");
+                    if(x[i, j] != 0)
+                        Console.Write($"{x[i, j]} ");
+                    else
+                        Console.Write("  ");
                 }
                 Console.WriteLine();
             }

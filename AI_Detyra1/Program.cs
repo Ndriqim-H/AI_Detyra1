@@ -85,8 +85,10 @@ namespace AI_2022___Console
             {
                 //We take the first element from the stack without removing it.
                 Sudoku currentNode = variableStack.Peek();
+
+                //Show the current state of the Sudoku.
                 //Console.WriteLine("_________________________");
-                //showSudoku(variableStack.ToList());
+                //showSudoku(variables.ToList());
                 //Console.WriteLine("_________________________");
 
                 //If we are at the last cell, we check differently since the are no more future cells.
@@ -149,7 +151,6 @@ namespace AI_2022___Console
                     variableStack.Pop();
                     continue;
                 }
-                //If the value is valid we continue to the next cell.
 
             }
             Console.WriteLine("==========================");
@@ -159,7 +160,7 @@ namespace AI_2022___Console
             else
                 Console.WriteLine("No solution found :/");
             Console.WriteLine();
-            showSudoku(variableStack.ToList());
+            //showSudoku(variableStack.ToList());
         }
 
 
@@ -213,7 +214,10 @@ namespace AI_2022___Console
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    Console.Write($"{x[i, j]} ");
+                    if (x[i, j] != 0)
+                        Console.Write($"{x[i, j]} ");
+                    else
+                        Console.Write("  ");
                 }
                 Console.WriteLine();
             }
